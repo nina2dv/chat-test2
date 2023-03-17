@@ -60,7 +60,7 @@ st.title("Open-Assistant SFT-1 12B Model")
 
 
 if 'messages' not in st.session_state:
-    st.session_state['messages'] = [{"User": "Hi", "Response": "Hello"}, ]
+    st.session_state['messages'] = [{"User": "User", "Response": "Open Assistant"}, ]
     
 hide_streamlit_style = """
             <style>
