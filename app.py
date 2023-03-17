@@ -61,6 +61,14 @@ st.title("Open-Assistant SFT-1 12B Model")
 
 if 'messages' not in st.session_state:
     st.session_state['messages'] = [{"User": "Hi", "Response": "Hello"}, ]
+    
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 hist = []
 form = st.form(key='my_form')
