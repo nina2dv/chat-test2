@@ -76,13 +76,11 @@ def predict(
         yield history
 
 # client = InferenceAPIClient("OpenAssistant/oasst-sft-1-pythia-12b")
-st.title("Open-Assistant SFT-1 12B Model Demo")
+st.title("Open-Assistant SFT-1 12B Demo")
 with st.sidebar:
     st.warning("Refreshing the page cleans the history")
     st.markdown(get_st_button_a_tag('https://open-assistant.io', 'Open Assistant Site'), unsafe_allow_html=True)
     st.markdown(get_st_button_a_tag('https://github.com/nina2dv', 'Donate'), unsafe_allow_html=True)
-
-    
 
 if 'messages' not in st.session_state:
     st.session_state['messages'] = [{"User": "User", "Response": "Open Assistant"}, ]
