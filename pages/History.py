@@ -5,3 +5,11 @@ for index, key in enumerate(st.session_state['messages']):
         st.success(key["Response"])
     with col2:
         st.info(key["User"])
+
+hide_streamlit_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    </style>
+    """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
