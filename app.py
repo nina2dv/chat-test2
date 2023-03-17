@@ -17,7 +17,7 @@ def get_st_button_a_tag(url_link, button_name):
     lineHeight: 1.6;
     width: auto;
     userSelect: none;
-    backgroundColor: #FFFFFF;
+    backgroundColor: #7792E3;
     border: 1px solid rgba(49, 51, 63, 0.2);">{button_name}</button></a>
     '''
 
