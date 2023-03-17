@@ -64,7 +64,7 @@ if 'messages' not in st.session_state:
 
 hist = []
 form = st.form(key='my_form')
-search = form.text_area(label='User : ', height=100)
+search = form.text_area(label='User : ', height=100, help="Ask anything")
 submit_button = form.form_submit_button(label='Enter')
 if submit_button:
     *_, last = predict("OpenAssistant/oasst-sft-1-pythia-12b", search, 0.2, 0.25, 0.6, 50,1.01, False, hist)  # check PEP 448
