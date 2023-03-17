@@ -1,6 +1,26 @@
 from text_generation import InferenceAPIClient
 import streamlit as st
 
+def get_st_button_a_tag(url_link, button_name):
+    """
+    generate html a tag
+    :param url_link:
+    :param button_name:
+    :return:
+    """
+    return f'''
+    <a href={url_link}><button style="
+    fontWeight: 400;
+    padding: 0.25rem 0.75rem;
+    borderRadius: 0.25rem;
+    margin: 0px;
+    lineHeight: 1.6;
+    width: auto;
+    userSelect: none;
+    backgroundColor: #FFFFFF;
+    border: 1px solid rgba(49, 51, 63, 0.2);">{button_name}</button></a>
+    '''
+
 def predict(
     model: str,
     inputs: str,
@@ -57,7 +77,12 @@ def predict(
 
 # client = InferenceAPIClient("OpenAssistant/oasst-sft-1-pythia-12b")
 st.title("Open-Assistant SFT-1 12B Model")
+with st.sidebar:
+    st.warning("Refreshing the page cleans the history")
+    st.markdown(get_st_button_a_tag('https://open-assistant.io', 'Open Assistant Site'), unsafe_allow_html=True)
+    st.markdown(get_st_button_a_tag('https://github.com/nina2dv', 'Donate'), unsafe_allow_html=True)
 
+    
 
 if 'messages' not in st.session_state:
     st.session_state['messages'] = [{"User": "User", "Response": "Open Assistant"}, ]
