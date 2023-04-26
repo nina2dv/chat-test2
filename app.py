@@ -78,7 +78,7 @@ def predict(
         yield history
 
 # client = InferenceAPIClient("OpenAssistant/oasst-sft-1-pythia-12b")
-st.title("Open-Assistant SFT-1 12B Demo")
+st.title("Open-Assistant 12B Demo")
 with st.sidebar:
     genre = st.radio(
     "Select model",
