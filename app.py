@@ -49,9 +49,10 @@ def predict(
         iterator = client.generate_stream(
             total_inputs,
             typical_p=typical_p,
+            repetition_penalty=0.5,
             truncate=1000,
             watermark=watermark,
-            max_new_tokens=500,
+            max_new_tokens=800,
         )
     for i, response in enumerate(iterator):
         if response.token.special:
