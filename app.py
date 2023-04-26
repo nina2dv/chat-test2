@@ -45,7 +45,7 @@ def predict(
 
     partial_words = ""
 
-    if model == "OpenAssistant/oasst-sft-1-pythia-12b":
+    if model == "OpenAssistant/oasst-sft-1-pythia-12b" or model == "OpenAssistant/oasst-sft-4-pythia-12b-epoch-3.5":
         iterator = client.generate_stream(
             total_inputs,
             typical_p=typical_p,
