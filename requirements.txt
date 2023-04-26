@@ -1,2 +1,2 @@
-text-generation==0.3.1
+text-generation==0.5.0
 streamlit==1.18.1
