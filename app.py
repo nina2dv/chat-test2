@@ -78,6 +78,10 @@ def predict(
 # client = InferenceAPIClient("OpenAssistant/oasst-sft-1-pythia-12b")
 st.title("Open-Assistant SFT-1 12B Demo")
 with st.sidebar:
+    genre = st.radio(
+    "Select model",
+    ('OpenAssistant/oasst-sft-1-pythia-12b', 'OpenAssistant/oasst-sft-4-pythia-12b-epoch-3.5'))
+    
     st.warning("Refreshing the page cleans the history")
     st.markdown(get_st_button_a_tag('https://open-assistant.io', 'Open Assistant Site'), unsafe_allow_html=True)
     st.markdown(get_st_button_a_tag('https://github.com/nina2dv', 'Donate'), unsafe_allow_html=True)
@@ -98,7 +102,7 @@ form = st.form(key='my_form')
 search = form.text_area(label='User : ', height=100, help="Ask anything")
 submit_button = form.form_submit_button(label='Enter')
 if submit_button:
-    *_, last = predict("OpenAssistant/oasst-sft-1-pythia-12b", search, 0.2, 0.25, 0.6, 50,1.01, False, hist)  # check PEP 448
+    *_, last = predict(genre, search, 0.2, 0.25, 0.6, 50,1.01, False, hist)  # check PEP 448
     st.success(last[1])
     st.session_state['messages'].append({"User": last[0], "Response": last[1]})
     # text = client.generate(f"<|prompter|>{search}<|endoftext|><|assistant|>").generated_text
